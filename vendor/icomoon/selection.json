@@ -1,0 +1,70 @@
+{
+  "IcoMoonType": "selection",
+  "icons": [
+    {
+      "icon": {
+        "paths": [
+          "M456 80c226.36-34.224 392.424 106.056 448 192 87.024 134.576 93.112 344.008 0 488-234.296 362.312-820.584 197.832-824-240-2.008-257.568 171.752-409.112 376-440zM304 304c10.128 19.208 63.080-4.416 72 16 0 133.336 0 266.664 0 400-28.256 3.744-77.080-13.072-72 24 23.608 41.024 164.024 30.312 200 8 7.016-47.016-59.52-20.48-80-40 0-58.664 0-117.336 0-176 29.336 0 58.664 0 88 0 42.832 79.832 103.512 141.824 144 224 33.128-0.264 90.304 28.096 88-24-104.304-29.032-140.656-126.008-184-216 41.232-16.304 72.624-28.64 88-56 106.36-189.304-178.184-209.528-344-192 0 10.664 0 21.336 0 32z",
+          "M424 496c0-58.664 0-117.336 0-176 37.8-16.352 112.616-7.968 152 0 98.28 87.688-6.736 211.112-152 176z"
+        ],
+        "attrs": [
+          {},
+          {}
+        ],
+        "isMulticolor": false,
+        "isMulticolor2": false,
+        "grid": 0,
+        "tags": [
+          "rstudio-[Converted]"
+        ]
+      },
+      "attrs": [
+        {},
+        {}
+      ],
+      "properties": {
+        "order": 6,
+        "id": 1,
+        "name": "rstudio",
+        "prevSize": 32,
+        "code": 59648
+      },
+      "setIdx": 0,
+      "setId": 2,
+      "iconIdx": 0
+    }
+  ],
+  "height": 1024,
+  "metadata": {
+    "name": "icomoon"
+  },
+  "preferences": {
+    "showGlyphs": true,
+    "showQuickUse": true,
+    "showQuickUse2": true,
+    "showSVGs": true,
+    "fontPref": {
+      "prefix": "icon-",
+      "metadata": {
+        "fontFamily": "icomoon"
+      },
+      "metrics": {
+        "emSize": 1024,
+        "baseline": 6.25,
+        "whitespace": 50
+      },
+      "embed": false
+    },
+    "imagePref": {
+      "prefix": "icon-",
+      "png": true,
+      "useClassSelector": true,
+      "color": 0,
+      "bgColor": 16777215,
+      "classSelector": ".icon"
+    },
+    "historySize": 50,
+    "showCodes": true,
+    "gridSize": 16
+  }
+}

@@ -1,0 +1,451 @@
+programming<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+<style>
+button.accordion {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 18px;
+    width: 40%;
+    height: 10%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: gold;
+}
+
+div.panel {
+    padding: 0 18px;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+/* Tooltip */
+
+.tooltip-container {
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip-container .tooltip {
+    opacity: 0;
+    z-index: 99;
+    width: 110px;
+    display: block;
+    padding: 5px 10px;
+    border-radius: 3px;
+    text-align: center;
+    border: 0px;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    -ms-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -o-transform: scale(0);
+    -ms-transform: scale(0);
+    transform: scale(0);
+    position: absolute;
+    right: -35px;
+    top: 55px;
+    &.tooltip-top {
+        right: -25px;
+        top: -55px;
+        &.tooltip-p {
+            padding: 5px 0px;
+        }
+    }
+    &.tooltip-p {
+        line-height: 1.2;
+        font-size: xx-large;
+    }
+}
+
+.tooltip:before,
+.tooltip:after {
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid $iron;
+    position: absolute;
+    top: -10px;
+    left: 43%;
+}
+
+.tooltip-top:before,
+.tooltip-top:after {
+    content: '';
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid $iron;
+    border-bottom: 0px solid $iron;
+    position: absolute;
+    top: auto;
+    bottom: -10px;
+    left: 43%;
+}
+
+.tooltip-container:hover .tooltip,
+a:hover .tooltip {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+}
+</style>
+<body>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Manni Adam</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="vendor/devicons/css/devicons.min.css" rel="stylesheet">
+    <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="vendor/icomoon/style.css" rel="stylesheet">
+    "<link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+
+    <!-- Custom styles for this template -->
+    <link href="css/resume.min.css" rel="stylesheet">
+
+  </head>
+
+  <body id="page-top">
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger" href="#page-top">
+        <span class="d-block d-lg-none">Start Bootstrap</span>
+        <span class="d-none d-lg-block">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#ResearchInterests">Research Interests</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#Publications">Publications</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="#cv">CV</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container-fluid p-0">
+
+      <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
+        <div class="my-auto">
+          <h1 class="mb-0">Manni
+            <span class="text-primary">Adam</span>
+          </h1>
+          <div class="subheading mb-5">Developmental Nuerobiology and Epigenetics
+            <a href="mailto:adamm@cardiff.ac.uk">AdamM@cardiff.ac.uk</a>
+          </div>
+          <p class="mb-5"><p> Hello! I am a developmental neurobiologist currently undertaking a PhD in neuroscience at the <a href="">MRC Centre for Neuropsychiatric Genetics and Genomics</a> in Cardiff University with <a href="">Professor Anthony Isles</a>.
+  </p>
+
+  <p class="mb-5">
+    I have previously completed an undergraduate degree in Biological Sciences at Bournemouth University before moving on to King's College London to complete an MSc Neuroscience in Developmental Neurobiology.
+  </p>
+  <p class="mb-5">
+    My overall interests lie in the role epigenetics in development and disorder.  In particular I am interested in developing an overarching framework of “epigenopathies” in neurodevelopmental disorders and in particular intellectual disability.
+    I also have an interest in coding and data science.
+  </p>
+          <ul class="list-inline list-social-icons mb-0">
+            <li class="list-inline-item">
+              <a href="https://twitter.com/6degreesofManni">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/manaladam">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://www.github.com/ManniAdam">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="ResearchInterests">
+        <div class="my-auto">
+          <h2 class="mb-5">Research Interests</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Neurodevelopment and disorders</h3>
+              <p>##</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Epigenetics</h3>
+              <p>##</p>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Cognition and Behaviour</h3>
+              <p>##</p>
+            </div>
+          </div>
+
+        </div>
+
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="education">
+        <div class="my-auto">
+          <h2 class="mb-5">Education</h2>
+
+          <div class="resume-item d-flex flex-column flex-md-row mb-5">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Cardiff University</h3>
+              <div class="subheading mb-3">PhD in Neuroscience</div>
+              <div><em> <b>Investigating neural mechanisms that underlie Ehmt1-associated neurodevelopmental disorders.</em> </b>
+                <p> I am using a genomic, cellular and animal model approach to elucidate the role Ehmt1 haploinsufficiency. Ehmt1 mutations and deletions have been associated neurodevelopmental disorders such as autism, schizophrenia, intellectual disability, and developmental delay.</p>
+                <p>The behavioural phenotype of the mouse model is characterised using assays including learning and memory tasks such as novel object recognition and 5-choice serial task, as well as paradigms developed to discern anxiety phenotypes: elevated plus maze, locomotor activity, and acoustic startle response.</p>
+                <p> Molecular and cellular techniques used to discern the effect of Ehmt1 haploinsufficiency used include: in vivo quantification of proliferation and survival of cells in the dentate gyrus using BrdU and immunohistochemistry; primary cell culture isolation of P7 hippocampal cells to discern survival, proliferation, and phenotype of the cells in vitro. Finally, high throughput sequencing (RNA-seq) is being performed to carry out functional enrichment and gene set enrichment analyses for neurodevelopmental disorders.</div>
+              <p><b>Expected end date: October 2018</b></p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary"style="font-size:15pt"><b>October 2015- current</b> </span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">King's College London</h3>
+              <div class="subheading mb-3">MSc Neuroscience in Developmental Neurobiology</div>
+              <div class="subheading mb-3">Distinction</div>
+              <p>Degree specialisation in developmental neurobiology, Independent research project on:<em> <b> “Role of Teneurins in the formation of the Hippocampus and Visual System.” </em> </b> </p>
+              <p> This project involved using a Ten-m3 gene-trap line, and Thy-1GFP reporter mouse lines to identify and characterise Ten-m3 expression patterns in the development of the hippocampus and retina. I provided the first quantification for previous qualitatively described pattern of expression in the retina, corresponding with gradients of Ten-m3 expression in visual cortex, and superior colliculus.</P>
+                <p> Using Thy1-GFP reporter line, I showed a similiar gradient of expresssion of Ten-m3 in the hippocampus and knock-out of the protein lead to the  misplacement of cell bodies in CA1 region, suggesting a function in the normal topography of hippocampus. Due to the known roles of ten-m3 in axon guidance and synaptic targeting in the development of other neural pathways, I proposed a similar conserved function within the hippocampus.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary" style="font-size: 15pt"> <b>Sept 2014 - Sept 2015</b></span>
+            </div>
+          </div>
+
+          <div class="resume-item d-flex flex-column flex-md-row">
+            <div class="resume-content mr-auto">
+              <h3 class="mb-0">Bournemouth University</h3>
+              <div class="subheading mb-3">BSc Biological Sciences</div>
+              <div class="subheading mb-3">First Class Honours</div>
+              <p>Final year dissertation: <em> <b>“Investigation of the Biological Mechanisms behind the Coupled Epigenetic Down- regulation Of RELN and GAD-1 in Schizophrenia.”</em></b> This project investigated the epigenetic mechanisms behind RELN and GAD-1’s down-regulation to gain an understanding behind the mechanisms involved, along with the extent of penetrance the downregulation of these two disorders have in schizophrenia.</p>
+            </div>
+            <div class="resume-date text-md-right">
+              <span class="text-primary" style="font-size:15pt"><b>2011 - 2014</b></span>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="skills">
+        <div class="my-auto">
+
+      <h2 class="mb-5">Skills</h2>
+
+              <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+              <button class="accordion"><div class="subheading mb-3">Animal Husbandry and Behaviour</div></button>
+                    <div class="panel">
+                    <  <p><li style="list-style:square;">Colony management and husbandry </li></p>
+                      <p><li style="list-style:square;">Spontaneous behaviours testing: anxiety, locmotor acitivty/coordination, sensorimotor gating, social dominance, and agression. </li></p>
+                      <p><li style="list-style:square;"> cognitive tasks testing: spatial, contextual,and recognition memory and learning.</li></p>
+                      <p><li style="list-style:square;"> </li></p>
+                    </div>
+                    <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                    <button class="accordion"><div class="subheading mb-3">Expert in rodent procedures</div></button>
+                          <div class="panel">
+                          <p><li style="list-style:square;">Intraperitoneal and subcutaneous injections </li></p>
+                          <p><li style="list-style:square;">Transcardial perfusions </li></p>
+                          <p><li style="list-style:square;">Brain and retinal microdissections</li></p>
+                          </div>
+                      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                      <button class="accordion"><div class="subheading mb-3">Tissue analysis skills</div></button>
+                            <div class="panel">
+                            <p><li style="list-style:square;">Genotyping</li></p>
+                            <p><li style="list-style:square;">Western blots</li></p>
+                            <p><li style="list-style:square;">RT-qPCR</li></p>
+                            <p><li style="list-style:square;">Tissue sectioning</li></p>
+                            <p><li style="list-style:square;">immunohistochemistry</li></p>
+                            <p><li style="list-style:square;">Microscopy</li></p>
+                              </div>
+                            <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+                            <button class="accordion"><div class="subheading mb-3">Molecular and cellular biology</div></button>
+                                  <div class="panel">
+                                  <p><li style="list-style:square;">Square Bullets</li></p>
+                                  </div>
+
+    <div class="subheading mb-3">Workflow</div>
+          <ul class="fa-ul mb-0">
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Mobile-First, Responsive Design</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Browser Testing &amp; Debugging</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Cross Functional Teams</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
+              Agile Development &amp; Scrum</li>
+          </ul>
+
+<div class="subheading mb-3">Programming Languages &amp; Tools</div>
+  <ul class="list-inline list-icons">
+    <li class="list-inline-item tooltip-container">
+        <i class="icon-rstudio"></i>
+          <span class="tooltip tooltip-p">
+              R, RStudio
+            </span>
+          </li>
+      <li class="list-inline-item tooltip-container">
+                <i class="devicon-linux-plain"></i>
+                <span class="tooltip tooltip-p">
+                  LINUX
+                </span></li>
+
+                <li class="list-inline-item tooltip-container">
+                  <i class="devicon-python-plain"></i>
+                  <span class="tooltip tooltip-p">
+                  PYTHON
+                  </span></li>
+              <li class="list-inline-item tooltip-container">
+                    <i class="devicon-atom-original"></i>
+                    <span class="tooltip tooltip-p">
+                    ATOM
+                    </span></li>
+                  <li class="list-inline-item tooltip-container">
+                        <i class="devicons devicons-git"></i>
+                        <span class="tooltip tooltip-p">
+                        GIT
+                        </span>
+                      </li>
+            <li class="list-inline-item tooltip-container">
+              <i class="devicons devicons-html5"></i>
+              <span class="tooltip tooltip-p">
+              HTML5
+              </span>
+              </li>
+          <li class="list-inline-item tooltip-container">
+              <i class="devicons devicons-css3"></i>
+              <span class="tooltip tooltip-p">
+              CSS3
+              </span>
+              </li></li>
+          <li class="list-inline-item tooltip-container">
+              <i class="devicons devicons-javascript"></i>
+              <span class="tooltip tooltip-p">
+                JAVASCRIPT
+              </span>
+                </li>
+          </ul>
+
+
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="Publications">
+        <div class="my-auto">
+          <h2 class="mb-5">Publications</h2>
+          <h4>Journal Articles</h4>
+  <ul class="cv">
+    <li class="cv"> <span style="color:#a8a92d"><b>Adam, M. A.</b></span> and Isles, A. R. (2017). <a href="http://www.mdpi.com/2075-4655/1/3/15/htm">EHMT1/GLP; biochemical function and association with brain disorders</a>. <em>Epigenomes</em> 1(3), article number: 15.(10.3390/epigenomes1030015)
+      <span class="small-icons"><a href="http://orca.cf.ac.uk/106324/1/epigenomes-01-00015-v4.pdf"><span style="font-size: 24pt"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></span>
+  </ul>
+</div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="cv">
+        <div class="my-auto">
+          <h2 class="mb-5">CV/RESUME</h2>
+<a href="https://manniadam.github.io/cv/ManniAdamCV.pdf"><span style="font-size: 50pt"><i class="fa fa-file-pdf-o" aria-hidden="true"></i></a></span>
+      </section>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/resume.min.js"></script>
+
+    <script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].onclick = function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight){
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+  }
+}
+</script>
+
+  </body>
+
+</html>
